@@ -12,10 +12,7 @@ public class HomePageXpath {
     public static final String BUTTON_MENU_HOME_APPLIANCES = "//div[@class='swiper-slide']//a[@href='/catalog/bytovaya_tekhnika/']";
     public static final String BUTTON_MENU_TV = "//div[@class='swiper-slide']//a[@href='/catalog/televizory_tv_pristavki_proektory/']";
     public static final String SEARCH_STRING = "//input[@id='smart-title-search-input']";
-    public static final String BUTTON_SEARCH = "//span[@id='smart-title-search_preloader_item']";
-    public static final String BUTTON_DETAILS = "//a[@class='add-to-card add-to-card--text']";
-    public static final String BUTTON_ADD_TO_BASKET = "//button[@id='bx_117848907_4572_mobile_add_basket_link']";
-
+    public static final String BUTTON_SEARCH = "//button[@name='s']";
 
     public static final String TEXT_PAGE_SMARTPHONE = "//h1[@class='h1--thin '][text()='Смартфоны']";
     public static final String TEXT_PAGE_TABLET = "//h1[@class=\"h1--thin \"][text()='Планшеты']";

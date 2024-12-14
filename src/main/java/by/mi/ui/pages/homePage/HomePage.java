@@ -41,33 +41,6 @@ public class HomePage {
         return this;
     }
 
-    public HomePage enterValueInSearch() {
-        String valueSearch = "Смартфон Xiaomi 14 Ultra";
-        driver.findElement(By.xpath(HomePageXpath.SEARCH_STRING)).sendKeys(valueSearch);
-        return this;
-    }
-
-    public HomePage clickButtonSearch() {
-        driver.findElement(By.xpath(HomePageXpath.BUTTON_SEARCH)).click();
-        return this;
-    }
-
-    public HomePage clickButtonDetails() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.BUTTON_DETAILS)));
-        driver.findElement(By.xpath(HomePageXpath.BUTTON_DETAILS)).click();
-        return this;
-    }
-
-    public HomePage clickButtonAddToBasket() {
-        driver.findElement(By.xpath(HomePageXpath.BUTTON_ADD_TO_BASKET)).click();
-        return this;
-    }
-
-    public HomePage clickButtonBasket() {
-        driver.findElement(By.xpath(HomePageXpath.BUTTON_BASKET)).click();
-        return this;
-    }
-
     public String getTextPageSmartphone() {
         return driver.findElement(By.xpath(HomePageXpath.TEXT_PAGE_SMARTPHONE)).getText();
     }

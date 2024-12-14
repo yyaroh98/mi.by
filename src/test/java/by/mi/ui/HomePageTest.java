@@ -31,21 +31,4 @@ public class HomePageTest extends BaseTest {
 
         Assertions.assertEquals(HomePageMessage.TEXT_PAGE_TABLET, homePage.getTextPageTablets());
     }
-
-
-    @Test
-    @DisplayName("Добавление заказа в корзину используя поиск страницы")
-    public void testAddOrderToBasketUsingPageSearch() {
-        HomePage homePage = new HomePage();
-
-        homePage
-                .clickButtonAcceptCookie()
-                .enterValueInSearch()
-                .clickButtonSearch()
-                .clickButtonDetails();
-//                .clickButtonAddToBasket()
-//                .clickButtonBasket();
-    }
-
-    // дописать тест добавление заказа в корзину через поиск
 }

@@ -4,6 +4,7 @@ import by.mi.ui.driver.Driver;
 import by.mi.ui.driver.Wait;
 import by.mi.ui.pages.homePage.HomePageXpath;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,8 +33,11 @@ public class SearchStringPage {
     }
 
     public SearchStringPage clickButtonDetails() {
-       WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SearchStringXpath.BUTTON_DETAILS1)));
-              driver.findElement(By.xpath(SearchStringXpath.BUTTON_DETAILS)).click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 200)");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SearchStringXpath.BUTTON_DETAILS)));
+        driver.findElement(By.xpath(SearchStringXpath.BUTTON_DETAILS)).click();
+
         return this;
     }
 
@@ -42,10 +46,12 @@ public class SearchStringPage {
         return this;
     }
 
-    public SearchStringPage clickButtonBasket() {
-        driver.findElement(By.xpath(HomePageXpath.BUTTON_BASKET)).click();
+    public SearchStringPage clickGoToTheBasket() {
+        driver.findElement(By.xpath(SearchStringXpath.BUTTON_GO_TO_THE_BASKET)).click();
         return this;
     }
 
-
+    public String getTextMobileInTheBasket() {
+        return driver.findElement(By.xpath(SearchStringXpath.NAME_MOBILE_IN_BASKET)).getText();
+    }
 }

@@ -54,3 +54,4 @@ public class SearchStringPage {
         return driver.findElement(By.xpath(SearchStringXpath.NAME_MOBILE_IN_BASKET)).getText();
     }
 }
+

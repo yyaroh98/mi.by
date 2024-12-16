@@ -18,3 +18,4 @@ public class HomePageXpath {
     public static final String TEXT_ORDER_IN_THE_BASKET = "//a[@class='good__name']";
 }
 
+

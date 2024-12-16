@@ -11,3 +11,5 @@ public class Wait {
         return wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     }
 }
+
+

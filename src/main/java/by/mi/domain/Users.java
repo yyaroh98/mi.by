@@ -38,5 +38,3 @@ public class Users {
         return new User(faker.name().username(), faker.internet().password());
     }
 }
-
-

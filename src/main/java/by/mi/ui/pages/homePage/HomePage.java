@@ -53,5 +53,3 @@ public class HomePage {
         return driver.findElement(By.xpath(HomePageXpath.TEXT_ORDER_IN_THE_BASKET)).getText();
     }
 }
-
-

@@ -24,8 +24,6 @@ public class SearchStringTest extends BaseTest {
         Assertions.assertEquals(SearchStringMessage.SMARTPHONE_XIAOMI_14_ULTRA, searchStringPage.getTextMobileInTheBasket());
     }
 }
-
-
 //@Test
 //@DisplayName("Добавление заказа в корзину используя поиск страницы")
 //public void testAddOrderToBasketUsingPageSearch() {

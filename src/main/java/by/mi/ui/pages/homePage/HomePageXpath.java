@@ -17,5 +17,3 @@ public class HomePageXpath {
     public static final String TEXT_PAGE_TABLET = "//h1[@class=\"h1--thin \"][text()='Планшеты']";
     public static final String TEXT_ORDER_IN_THE_BASKET = "//a[@class='good__name']";
 }
-
-

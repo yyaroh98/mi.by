@@ -24,5 +24,3 @@ public class LoginRequest {
         return getBody(user.getEmail(), user.getPassword());
     }
 }
-
-

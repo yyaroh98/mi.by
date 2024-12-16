@@ -14,4 +14,3 @@ public class GenerationDataUtil {
         return faker.internet().password();
     }
 }
-

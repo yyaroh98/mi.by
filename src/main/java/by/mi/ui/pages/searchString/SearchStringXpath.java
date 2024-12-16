@@ -7,4 +7,3 @@ public class SearchStringXpath {
     public static final String BUTTON_GO_TO_THE_BASKET = "//span[@class='btn btn-default btn-buy btn-sm']";
     public static final String NAME_MOBILE_IN_BASKET = "//div[@class='good__info']//a[@href='/catalog/smartfony/xiaomi/smartfon_xiaomi_14_ultra/']";
 }
-

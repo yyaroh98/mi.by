@@ -107,4 +107,3 @@ public class LoginPageTest extends BaseTest {
         Assertions.assertEquals(LoginMessage.PASSWORD_MESSAGE, loginPage.getTextPassword());
     }
 }
-

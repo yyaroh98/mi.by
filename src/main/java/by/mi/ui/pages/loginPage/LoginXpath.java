@@ -9,3 +9,4 @@ public class LoginXpath {
     public static final String MESSAGE_PASSWORD = "//*[@id=\"modal-login\"]//label[contains(text(),'Пароль')]";
 }
 
+

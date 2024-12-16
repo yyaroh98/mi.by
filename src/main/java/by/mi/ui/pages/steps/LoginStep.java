@@ -22,3 +22,4 @@ public class LoginStep {
         fillLoginFormAndSubmit(user.getEmail(), user.getPassword());
     }
 }
+

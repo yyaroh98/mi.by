@@ -32,3 +32,4 @@ public class HomePageTest extends BaseTest {
         Assertions.assertEquals(HomePageMessage.TEXT_PAGE_TABLET, homePage.getTextPageTablets());
     }
 }
+

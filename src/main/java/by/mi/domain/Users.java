@@ -37,5 +37,5 @@ public class Users {
         Faker faker = new Faker();
         return new User(faker.name().username(), faker.internet().password());
     }
-
 }
+

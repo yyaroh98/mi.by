@@ -49,5 +49,19 @@ public class LoginApiTest {
         //   .body("data", equalTo("true"));
     }
 
+    @Test
+    @DisplayName("Авторизация с пустыми значениями email и password")
+    public void testWithEmptyEmailAndPassword() {
 
+        given()
+                .spec(LoginRequest.requestSpecification)
+                .body(LoginRequest.getBody(Users.getUserWithEmptyEmailAndPassword()))
+                .when()
+                .post()
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("status", equalTo("error"))
+                .body("data", equalTo(null));
+    }
 }

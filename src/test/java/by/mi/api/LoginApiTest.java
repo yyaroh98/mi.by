@@ -28,8 +28,8 @@ public class LoginApiTest {
                 .log().all()
                 .statusCode(200)
                 .body("status", equalTo("error"))
-                .body("data", equalTo(null));
-        // .body("message", equalTo("Неверный логин или пароль.<br>"));
+                .body("data", equalTo(null))
+                .body("message", equalTo("Неверный логин или пароль.<br>"));
     }
 
     @Test

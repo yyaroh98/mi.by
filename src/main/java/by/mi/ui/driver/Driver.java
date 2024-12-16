@@ -4,16 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
     private static WebDriver driver;
 
-    private Driver() {
-    }
-
-    ;
+    private Driver() {};
 
     public static WebDriver getDriver() {
         if (driver == null) {

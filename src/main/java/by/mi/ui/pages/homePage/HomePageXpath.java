@@ -3,7 +3,6 @@ package by.mi.ui.pages.homePage;
 public class HomePageXpath {
     public static final String BUTTON_ACCEPT_COOKIES = "//button[@class='button js-cookie_accept']";
     public static final String BUTTON_LOGIN = "//div[@class='header__top-nav flex items-center']//a[@class='js-open-modal']";
-
     public static final String BUTTON_BASKET = "//a[@id='bx_basketFKauiI']";
     public static final String BUTTON_MENU_SMARTPHONE = "//div[@class='swiper-slide swiper-slide-active']//a[@href='/catalog/smartfony/']";
     public static final String BUTTON_MENU_TABLETS = "//div[@class='swiper-slide swiper-slide-next']//a[@href='/catalog/planshety/']";

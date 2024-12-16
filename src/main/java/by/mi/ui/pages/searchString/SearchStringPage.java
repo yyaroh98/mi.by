@@ -37,7 +37,6 @@ public class SearchStringPage {
         js.executeScript("window.scrollBy(0, 200)");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SearchStringXpath.BUTTON_DETAILS)));
         driver.findElement(By.xpath(SearchStringXpath.BUTTON_DETAILS)).click();
-
         return this;
     }
 

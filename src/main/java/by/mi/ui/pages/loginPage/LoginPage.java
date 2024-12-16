@@ -39,3 +39,4 @@ public class LoginPage {
         return driver.findElement(By.xpath(LoginXpath.MESSAGE_PASSWORD)).getText();
     }
 }
+

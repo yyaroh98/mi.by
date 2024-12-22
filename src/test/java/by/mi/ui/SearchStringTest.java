@@ -1,43 +1,41 @@
 package by.mi.ui;
 
-import by.mi.ui.pages.homePage.HomePage;
 import by.mi.ui.pages.searchString.SearchStringMessage;
 import by.mi.ui.pages.searchString.SearchStringPage;
-import by.mi.ui.pages.searchString.SearchStringXpath;
 import by.mi.ui.pages.steps.SearchStep;
-import by.mi.ui.utils.MobilePhone;
-import io.restassured.internal.common.assertion.Assertion;
+import by.mi.ui.utils.MobilePhones;
+import by.mi.ui.utils.Tablets;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SearchStringTest extends BaseTest {
+    private SearchStep searchStep;
+    private SearchStringPage searchStringPage;
+
+    @BeforeEach
+    void setUpSearchPage() {
+        searchStep = new SearchStep();
+        searchStringPage = new SearchStringPage();
+    }
 
     @Test
-    @DisplayName("Добавление 'Смартфон Xiaomi 14 Ultra' в корзину, используя поиск страницы")
+    @DisplayName("Добавление в корзину 'Смартфона Xiaomi MIX Flip', используя поиск страницы")
     public void testAddOrderToBasketUsingPageSearch() {
 
-        SearchStep searchStep = new SearchStep();
-        searchStep.addOrderIntoBasket(MobilePhone.MOBILE_XIAOMI_14_ULTRA);
+        searchStep.addOrderIntoBasket(MobilePhones.MOBILE_XIAOMI_MIX_FLIP);
 
-        SearchStringPage searchStringPage = new SearchStringPage();
-        Assertions.assertEquals(SearchStringMessage.SMARTPHONE_XIAOMI_14_ULTRA, searchStringPage.getTextMobileInTheBasket());
+        Assertions.assertEquals(SearchStringMessage.SMARTPHONE_XIAOMI_MIX_FLIP_IN_THE_BASKET, searchStringPage.getTextMobileInTheBasket());
+    }
+
+    @Test
+    @DisplayName("Добавление в корзину 2 заказа 'Планшет Xiaomi Pad 6S Pro' и 'Смартфона Xiaomi MIX Flip', используя поиск страницы")
+    public void testAddTwoOrdersToBasketUsingPageSearch() {
+
+        searchStep.addTwoOrdersIntoBasket(MobilePhones.MOBILE_XIAOMI_MIX_FLIP, Tablets.TABLET_XIAOMI_PAD_6S_PRO);
+
+        Assertions.assertEquals(SearchStringMessage.SMARTPHONE_XIAOMI_MIX_FLIP_IN_THE_BASKET, searchStringPage.getTextMobileInTheBasket());
+        Assertions.assertEquals(SearchStringMessage.TABLET_XIAOMI_PAD_6S_PRO, searchStringPage.getTextTabletInTheBasket());
     }
 }
-//@Test
-//@DisplayName("Добавление заказа в корзину используя поиск страницы")
-//public void testAddOrderToBasketUsingPageSearch() {
-//
-//    HomePage homePage = new HomePage();
-//    homePage.clickButtonAcceptCookie();
-//
-//    SearchStringPage searchStringPage = new SearchStringPage();
-//    searchStringPage
-//            .sendKeysSearchMobilePhone("Смартфон Xiaomi 14 Ultra")
-//            .clickButtonSearch()
-//            .clickButtonDetails()
-//            .clickButtonAddToBasket()
-//            .clickGoToTheBasket();
-//
-//    Assertions.assertEquals(SearchStringMessage.SMARTPHONE_XIAOMI_14_ULTRA, searchStringPage.getTextMobileInTheBasket());
-//}

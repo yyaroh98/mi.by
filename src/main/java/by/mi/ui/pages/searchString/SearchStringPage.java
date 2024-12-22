@@ -1,13 +1,11 @@
 package by.mi.ui.pages.searchString;
 
 import by.mi.ui.driver.Driver;
-import by.mi.ui.driver.Wait;
 import by.mi.ui.pages.homePage.HomePageXpath;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -22,8 +20,8 @@ public class SearchStringPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(7));
     }
 
-    public SearchStringPage sendKeysSearchMobilePhone(String mobilePhone) {
-        driver.findElement(By.xpath(HomePageXpath.SEARCH_STRING)).sendKeys(mobilePhone);
+    public SearchStringPage sendKeysSearch(String value) {
+        driver.findElement(By.xpath(HomePageXpath.SEARCH_STRING)).sendKeys(value);
         return this;
     }
 
@@ -33,10 +31,14 @@ public class SearchStringPage {
     }
 
     public SearchStringPage clickButtonDetails() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 200)");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SearchStringXpath.BUTTON_DETAILS)));
-        driver.findElement(By.xpath(SearchStringXpath.BUTTON_DETAILS)).click();
+        WebElement element = driver.findElement(By.xpath(SearchStringXpath.BUTTON_DETAILS));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        try {
+            Thread.sleep(200);
+        } catch (Exception e) {
+
+        }
+        element.click();
         return this;
     }
 
@@ -52,5 +54,9 @@ public class SearchStringPage {
 
     public String getTextMobileInTheBasket() {
         return driver.findElement(By.xpath(SearchStringXpath.NAME_MOBILE_IN_BASKET)).getText();
+    }
+
+    public String getTextTabletInTheBasket() {
+        return driver.findElement(By.xpath(SearchStringXpath.NAME_TABLET_IN_BASKET)).getText();
     }
 }

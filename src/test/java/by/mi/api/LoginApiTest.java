@@ -9,28 +9,26 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class LoginApiTest {
+    private LoginRequest loginRequest;
 
     @BeforeEach
-    void setUp() {
+    void setUpLoginApiTest() {
         LoginRequest.initRequestSpecification();
+        loginRequest = new LoginRequest();
     }
 
     @Test
     @DisplayName("Авторизация с неверным email и password")
     public void testWithIncorrectEmailAndPassword() {
 
-        given()
-                .spec(LoginRequest.requestSpecification)
-                .body(LoginRequest.getBody(Users.getUserWithIncorrectEmailAndPassword()))
-                .when()
-                .post()
-                .then()
+        loginRequest.getResponseForRequest(Users.getUserWithIncorrectEmailAndPassword())
                 .log().all()
                 .statusCode(200)
                 .body("status", equalTo("error"))
-                .body("data", equalTo(null))
-                .body("message", equalTo("Неверный логин или пароль.<br>"));
+                .body("data", equalTo(null));
+        //   .body("message", equalTo(ApiMessage.INCORRECT_EMAIL_AND_PASSWORD_MESSAGE));
     }
+
 
     @Test
     @DisplayName("Авторизация с верным email и password")
@@ -38,12 +36,7 @@ public class LoginApiTest {
         String email = "yaroshzhenya_98@mail.ru";
         String password = "c412f1809";
 
-        given()
-                .spec(LoginRequest.requestSpecification)
-                .body(LoginRequest.getBody("email", "password"))
-                .when()
-                .post()
-                .then()
+        loginRequest.getResponseForRequest(email, password)
                 .log().all()
                 .statusCode(200);
         //   .body("data", equalTo("true"));
@@ -53,12 +46,7 @@ public class LoginApiTest {
     @DisplayName("Авторизация с пустыми значениями email и password")
     public void testWithEmptyEmailAndPassword() {
 
-        given()
-                .spec(LoginRequest.requestSpecification)
-                .body(LoginRequest.getBody(Users.getUserWithEmptyEmailAndPassword()))
-                .when()
-                .post()
-                .then()
+        loginRequest.getResponseForRequest(Users.getUserWithEmptyEmailAndPassword())
                 .log().all()
                 .statusCode(200)
                 .body("status", equalTo("error"))

@@ -1,17 +1,15 @@
 package by.mi.domain;
 
-import com.github.javafaker.Faker;
+import by.mi.ui.utils.GenerationDataUtil;
 
 public class Users {
 
     public static User getUserWithValidEmailAndPassword() {
-        Faker faker = new Faker();
-        return new User(faker.internet().emailAddress(), faker.internet().password());
+        return new User(GenerationDataUtil.generateValidEmail(), GenerationDataUtil.generateValidPassword());
     }
 
     public static User getUserWithIncorrectEmailAndPassword() {
-        Faker faker = new Faker();
-        return new User(faker.name().username(), "..f3f");
+        return new User(GenerationDataUtil.generateIncorrectEmail(), GenerationDataUtil.generateRandomPassword());
     }
 
     public static User getUserWithEmptyEmailAndPassword() {
@@ -19,22 +17,18 @@ public class Users {
     }
 
     public static User getUserWithValidEmailAndEmptyPassword() {
-        Faker faker = new Faker();
-        return new User(faker.internet().emailAddress(), "");
+        return new User(GenerationDataUtil.generateValidEmail(), "");
     }
 
     public static User getUserWithEmptyEmailAndValidPassword() {
-        Faker faker = new Faker();
-        return new User("", faker.internet().password());
+        return new User("", GenerationDataUtil.generateValidPassword());
     }
 
     public static User getUserWithValidEmailAndIncorrectPassword() {
-        Faker faker = new Faker();
-        return new User(faker.internet().emailAddress(), "..!432d");
+        return new User(GenerationDataUtil.generateValidPassword(), GenerationDataUtil.generateRandomPassword());
     }
 
     public static User getUserWithIncorrectEmailAndValidPassword() {
-        Faker faker = new Faker();
-        return new User(faker.name().username(), faker.internet().password());
+        return new User(GenerationDataUtil.generateIncorrectEmail(), GenerationDataUtil.generateValidPassword());
     }
 }

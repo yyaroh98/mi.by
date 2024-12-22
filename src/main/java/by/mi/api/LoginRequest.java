@@ -1,7 +1,6 @@
 package by.mi.api;
 
 import by.mi.domain.User;
-import by.mi.domain.Users;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;

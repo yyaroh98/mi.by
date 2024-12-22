@@ -1,8 +1,12 @@
 package by.mi.api;
 
 import by.mi.domain.User;
+import by.mi.domain.Users;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+
+import static io.restassured.RestAssured.given;
 
 public class LoginRequest {
 
@@ -14,6 +18,26 @@ public class LoginRequest {
                 .setBasePath("/bitrix/services/main/ajax.php?mode=ajax&c=mi%3Aauthorization&action=login")
                 .setContentType("application/x-www-form-urlencoded")
                 .build();
+    }
+
+    public ValidatableResponse getResponseForRequest(User user) {
+        ValidatableResponse response = given()
+                .spec(requestSpecification)
+                .body(getBody(user))
+                .when()
+                .post()
+                .then();
+        return response;
+    }
+
+    public ValidatableResponse getResponseForRequest(String email, String password) {
+        ValidatableResponse response = given()
+                .spec(requestSpecification)
+                .body(getBody(email, password))
+                .when()
+                .post()
+                .then();
+        return response;
     }
 
     public static String getBody(String email, String password) {

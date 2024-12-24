@@ -2,7 +2,6 @@ package by.mi.ui.pages.steps;
 
 import by.mi.domain.User;
 import by.mi.ui.pages.homePage.HomePage;
-import by.mi.ui.pages.loginPage.LoginPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

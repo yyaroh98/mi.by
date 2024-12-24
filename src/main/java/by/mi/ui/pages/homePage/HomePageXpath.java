@@ -23,5 +23,4 @@ public class HomePageXpath {
     public static final String TEXT_PAGE_HOUSEHOLD_APPLIANCES = "//h1[@class=\"h1--thin \"][text()='Бытовая техника']";
     public static final String TEXT_ORDER_IN_THE_BASKET = "//a[@class='good__name']";
     public static final String TEXT_ORDER_IN_THE_BASKET_VACUUM_CLEANER = "//a[@class='good__name']";
-
 }

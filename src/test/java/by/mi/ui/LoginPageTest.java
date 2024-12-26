@@ -59,7 +59,7 @@ public class LoginPageTest extends BaseTest {
 
         loginStep.fillLoginFormAndSubmit(Users.getUserWithIncorrectEmailAndPassword());
 
-      //  Assertions.assertEquals(LoginMessage.INCORRECT_ENTRY_EMAIL_AND_PASSWORD_MESSAGE, loginPage.getTextMessageIncorrectEmailAndPassword());
+        Assertions.assertEquals(LoginMessage.INCORRECT_ENTRY_EMAIL_AND_PASSWORD_MESSAGE, loginPage.getTextMessageIncorrectEmailAndPassword());
         // не читает loginPage.getTextMessageIncorrectEmailAndPassword()
         logger.info("Конец - Тест testIncorrectEmailAndPassword(). Проверка формы логина с невалидными значениями email и password.");
     }
@@ -85,7 +85,7 @@ public class LoginPageTest extends BaseTest {
 
         loginStep.fillLoginFormAndSubmit(Users.getUserWithIncorrectEmailAndValidPassword());
 
-     //  Assertions.assertEquals(LoginMessage.INCORRECT_ENTRY_EMAIL_AND_PASSWORD_MESSAGE, loginPage.getTextMessageIncorrectEmailAndPassword());
+        Assertions.assertEquals(LoginMessage.INCORRECT_ENTRY_EMAIL_AND_PASSWORD_MESSAGE, loginPage.getTextMessageIncorrectEmailAndPassword());
 
         logger.info("Конец - Тест testWithIncorrectEmailAndValidPassword(). Проверка формы логина с невалидным значением email и валидным password.");
     }
@@ -98,8 +98,8 @@ public class LoginPageTest extends BaseTest {
 
         loginStep.fillLoginFormAndSubmit(Users.getUserWithEmptyEmailAndValidPassword());
 
-        //   Assertions.assertEquals(LoginMessage.YOUR_EMAIL_MESSAGE, loginPage.getTextYourEmail());
-        //   Assertions.assertEquals(LoginMessage.PASSWORD_MESSAGE, loginPage.getTextPassword());
+        Assertions.assertEquals(LoginMessage.YOUR_EMAIL_MESSAGE, loginPage.getTextYourEmail());
+        Assertions.assertEquals(LoginMessage.PASSWORD_MESSAGE, loginPage.getTextPassword());
 
         logger.info("Конец - Тест testWithEmptyEmailAndValidPassword(). Проверка формы логина с пустым значением email и валидным password.");
     }
@@ -112,8 +112,8 @@ public class LoginPageTest extends BaseTest {
 
         loginStep.fillLoginFormAndSubmit(Users.getUserWithValidEmailAndEmptyPassword());
 
-        //  Assertions.assertEquals(LoginMessage.YOUR_EMAIL_MESSAGE, loginPage.getTextYourEmail());
-        //   Assertions.assertEquals(LoginMessage.PASSWORD_MESSAGE, loginPage.getTextPassword());
+        Assertions.assertEquals(LoginMessage.YOUR_EMAIL_MESSAGE, loginPage.getTextYourEmail());
+        Assertions.assertEquals(LoginMessage.PASSWORD_MESSAGE, loginPage.getTextPassword());
 
         logger.info("Конец - Тест testWithValidEmailAndEmptyPassword(). Проверка формы логина с валидным значением email и пустым password.");
     }
